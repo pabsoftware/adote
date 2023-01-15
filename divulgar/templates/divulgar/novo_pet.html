@@ -64,13 +64,18 @@
                                     <br>
                                     <span>Tags:</span>
                                     <select name="tags" multiple class="form-select">
-                                       
+                                      {% for tag in tags %} 
+                                        <option value="{{tag.id}}"> {{tag.tag}}</option>
+                                      {% endfor %} 
                                     </select>
                                     <br>
                                     </span>Raça:</span>
 
                                     <select name="raca" class="form-select">
-                                       
+                                      {% for raca in racas%} 
+                                        <option value="{{raca.id}}"> {{raca.raca}}</option>
+
+                                      {% endfor %}
                                     </select>
 
                                     <input type="submit" value="ENVIAR" class="btn-custom-primary">
