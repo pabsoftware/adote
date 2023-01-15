@@ -31,14 +31,16 @@
                             <div class="body-box">
                                 <form action="{% url 'novo_pet' %}" method="POST" enctype='multipart/form-data'>{% csrf_token %}
                                     {% if messages %}
-                                        <br>
+                                    <br>
                                         {% for message in messages %}
-                                            <div class="alert {{message.tags}}">
+                                            <div class="alert  {{message.tags}} alert-dismissible ">
+                                                
                                                 {{message}}
+                                                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
                                             </div>
                                         {% endfor %}
                                     {% endif %}
-                                    <input type="file" name="foto" class="form-control">
+                                                    <input type="file" name="foto" class="form-control">
                                     <br>
                                     <span>Nome:<span>
                                     <input type="text" class="form-control" name="nome" placeholder="Digite o nome do pet...">
